@@ -1,0 +1,38 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center p-3">
+          <h1>YOU ARE WELCOME!</h1>
+        </div>
+        <div class="col-12">
+            {{#if messages.succesMessage}}
+                <div class="alert alert-success"> {{messages.succesMessage}}</div>
+            {{/if}}
+            {{#if messages.errorMessage}}
+                <div class="alert alert-danger"> {{messages.errorMessage}}</div>
+            {{/if}}
+        </div>
+        <div class="col-12">
+        
+            <form method="POST" action="/">
+                <div class=" form-group mb-3">
+                    <label for="title" class="form-label">TITLE</label>
+                    <input type="text" id="title" class="form-control" name= "title">
+                    {{!-- <label for="author" class="form-label">AUTHOR</label>
+                    <select type="text" id="author" class="form-select" name= "author">
+                        <option selected >Select author</option>
+                        {{#each result}}
+                            <option value="{{this.dataValues.id}}" >{{this.dataValues.firstname}} {{this.dataValues.lastname}}</option>  
+                        {{/each}}
+                    </select> --}}
+                    <label for="article" class="form-label">ARTICLE</label>
+                    <textarea name="article" id="article" cols="30" rows="5" class="form-control"></textarea>
+                    <button class="btn btn-success mt-3">SAVE</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12">
+            <a href="/logout">Log out</a>
+        </div>
+    </div>
+</div>
